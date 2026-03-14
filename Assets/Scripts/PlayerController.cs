@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("이동 설정")]
     [SerializeField] private float moveSpeed = 5f;
 
-    public static event Action OnGameOver;
-
     private Animator oiiaAnimator;
     private Animator expAnimator;
-    private bool isGameOver = false;
     private GameObject oiiaModelObject; 
 
     [SerializeField] private AudioSource moveAudioSource;
@@ -77,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (isGameOver) return;
+        if (GameManager.Instance != null && GameManager.Instance.IsGameOver) return;
 
         float input = 0f;
         // A 키: 왼쪽(-1), D 키: 오른쪽(+1)
@@ -129,13 +125,11 @@ public class PlayerMovement : MonoBehaviour
     // 차량과 충돌 시 게임 오버 처리
     private void OnTriggerEnter(Collider other)
     {
-        if (isGameOver) return;
+        if (GameManager.Instance != null && GameManager.Instance.IsGameOver) return;
 
         // Car 태그와 충돌했는지 확인
         if (other.CompareTag("Car"))
         {
-            isGameOver = true;
-
             // 움직이는 소리 정지 및 죽음 소리 재생
             if (moveAudioSource != null && moveAudioSource.isPlaying)
             {
@@ -190,7 +184,14 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(HideOIIAModelAfterDelay(0.2f));
             }
 
-            OnGameOver?.Invoke();
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.GameOver();
+            }
+            else
+            {
+                Debug.LogWarning("GameManager 인스턴스를 찾지 못해 GameOver를 전파하지 못했습니다.");
+            }
         }
     }
 

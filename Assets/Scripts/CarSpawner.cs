@@ -29,11 +29,11 @@ public class CarSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerMovement.OnGameOver += HandleGameOver;   // ★ 이벤트 구독
+        GameManager.OnGameOver += HandleGameOver;   // ★ 이벤트 구독
     }
     private void OnDisable()
     {
-        PlayerMovement.OnGameOver -= HandleGameOver;   // ★ 구독 해제
+        GameManager.OnGameOver -= HandleGameOver;   // ★ 구독 해제
     }
 
     void Awake()

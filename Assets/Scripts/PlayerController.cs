@@ -7,10 +7,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("이동 설정")]
     [SerializeField] private float moveSpeed = 5f;
 
-    private Animator oiiaAnimator;
-    private Animator expAnimator;
-    private GameObject oiiaModelObject; 
-
+    [Header("모델 / 이펙트")]
+    [SerializeField] private Animator oiiaAnimator;
+    [SerializeField] private Animator expAnimator;
+    [SerializeField] private GameObject oiiaModelObject;
+    
+    [Header("오디오")]
     [SerializeField] private AudioSource moveAudioSource;
     [SerializeField] private AudioSource deathAudioSource;
 

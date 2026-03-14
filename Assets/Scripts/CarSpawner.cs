@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 임시 오브젝트 풀 클래스. 차후 수정예정
+[System.Serializable]
+public class CarPool
+{
+    public GameObject prefab;
+    public List<GameObject> objects = new List<GameObject>();
+}
+
 public class CarSpawner : MonoBehaviour
 {
     [Header("Car 프리팹 목록 (Inspector에서 드래그 앤 드랍)")]
@@ -29,11 +37,11 @@ public class CarSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnGameOver += HandleGameOver;   // ★ 이벤트 구독
+        GameManager.Instance.OnGameOver += HandleGameOver;   // ★ 이벤트 구독
     }
     private void OnDisable()
     {
-        GameManager.OnGameOver -= HandleGameOver;   // ★ 구독 해제
+        GameManager.Instance.OnGameOver -= HandleGameOver;   // ★ 구독 해제
     }
 
     void Awake()

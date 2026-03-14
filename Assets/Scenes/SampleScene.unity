@@ -319,6 +319,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &338734687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 338734689}
+  - component: {fileID: 338734688}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &338734688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338734687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40f162c10c73dd448724a0cbf3273f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &338734689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338734687}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &344186128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,7 +1915,7 @@ Transform:
   m_GameObject: {fileID: 919132148291734488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 40.89126, y: 0, z: -12.35159}
+  m_LocalPosition: {x: 40.89126, y: 0, z: -10.35159}
   m_LocalScale: {x: 11, y: 11, z: 11}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2969,6 +3013,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1272306706889870020, guid: 106dd6d40331b194e9063407f0a86cfa,
+        type: 3}
+      propertyPath: carPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272306706889870020, guid: 106dd6d40331b194e9063407f0a86cfa,
+        type: 3}
+      propertyPath: 'carPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 6780415068742794362, guid: b3c51726d606a96479f273a2498b553a,
+        type: 3}
+    - target: {fileID: 1272306706889870020, guid: 106dd6d40331b194e9063407f0a86cfa,
+        type: 3}
+      propertyPath: 'carPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3234061859874228116, guid: 739fe5603e2dde04186c555c3d79608b,
+        type: 3}
     - target: {fileID: 8530369840778347634, guid: 106dd6d40331b194e9063407f0a86cfa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2977,7 +3038,7 @@ PrefabInstance:
     - target: {fileID: 8530369840778347634, guid: 106dd6d40331b194e9063407f0a86cfa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8530369840778347634, guid: 106dd6d40331b194e9063407f0a86cfa,
         type: 3}
@@ -3033,6 +3094,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 338734689}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 732836858}
